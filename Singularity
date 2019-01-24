@@ -20,3 +20,5 @@ Debian container with configured and installed petsc.
     ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --with-cxx-dialect=C++11 \
                 --download-fblaslapack --download-mpich --download-triangle \
                 --download-ctetgen --download-hypre
+    make all
+    make test
