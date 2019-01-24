@@ -5,8 +5,8 @@ From: debian:stable
 Debian container with configured and installed petsc.
 
 %labels
-    Darko Janekovic <darko.janekovic@fer.hr>
-    PETSc version 3.9.4
+    Author Darko Janekovic <darko.janekovic@fer.hr>
+    PETSc_version 3.9.4
 
 %post
     apt-get update
@@ -19,6 +19,6 @@ Debian container with configured and installed petsc.
     cd petsc-3.9.4/
     ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --with-cxx-dialect=C++11 \
                 --download-fblaslapack --download-mpich --download-triangle \
-                --download-ctetgen --download-hypre
+                --download-ctetgen --download-hypre --download-superlu
     make all
     make test
