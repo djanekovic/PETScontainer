@@ -21,5 +21,4 @@ Debian container with configured and installed petsc.
                 --download-fblaslapack --download-mpich --download-triangle \
                 --download-ctetgen --download-hypre --download-hdf5 \
                 --with-debugging=0
-    make all
-    make test
+    make all && make test && make install
