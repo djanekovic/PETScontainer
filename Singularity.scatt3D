@@ -2,5 +2,6 @@ BOOTSTRAP: docker
 FROM: quay.io/fenicsproject/stable:2017.2.0
 
 %post
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
     apt update
     apt upgrade -y
