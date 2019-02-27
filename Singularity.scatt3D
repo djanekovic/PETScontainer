@@ -1,0 +1,6 @@
+BOOTSTRAP: docker
+FROM: quay.io/fenicsproject/stable:2017.2.0
+
+%post
+    apt update
+    apt upgrade -y
