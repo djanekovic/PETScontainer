@@ -17,8 +17,9 @@ Debian container with configured and installed petsc.
     wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.9.4.tar.gz
     gunzip -c petsc-3.9.4.tar.gz | tar -xof -
     cd petsc-3.9.4/
-    ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran --with-cxx-dialect=C++11 \
+    ./configure --with-cc=gcc --with-cxx=g++ --with-fc=gfortran \
+                --with-cxx-dialect=C++11 \
                 --download-fblaslapack --download-mpich --download-triangle \
                 --download-ctetgen --download-hypre --download-hdf5 \
                 --with-debugging=0
-    make all && make test && make install
+    make all test
