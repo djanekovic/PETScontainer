@@ -19,11 +19,13 @@ Debian container with configured and installed petsc.
     gunzip -c petsc-3.11.0.tar.gz | tar -xof -
     cd petsc-3.11.0/
 
-    ./configure --with-blaslapack-lib=-lopenblas --download-openmpi \
+    ./configure --with-blaslapack-lib=-lopenblas --download-openmpi         \
                 --download-hypre --download-superlu --download-superlu_dist \
-                --download-parmetis --download-metis --download-ptscotch \
-                --download-triangle --download-ctetgen --download-hdf5 \
-                --with-cc=gcc --with-fc=gfortran --with-cxx=c++ \
-                --with-cxx-dialect=C++11 --with-debugging=0
+                --download-parmetis --download-metis --download-ptscotch    \
+                --download-triangle --download-ctetgen --download-hdf5      \
+                --with-cc=gcc --with-fc=gfortran --with-cxx=c++             \
+                --with-cxx-dialect=C++11 --with-debugging=0                 \
+                COPTFLAGS=-O3 \
+                CXXOPTFLAGS=-O3 \
+                FOPTFLAGS=-O3
     make
-    make test
