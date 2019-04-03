@@ -15,7 +15,7 @@ Debian container with configured and installed petsc.
                     curl python pkg-config build-essential          \
                     valgrind openssh-client openssh-server          \
                     libopenblas-dev libopenblas-base bison flex -y
-    wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.11.0.tar.gz
+    wget -q http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.11.0.tar.gz
     gunzip -c petsc-3.11.0.tar.gz | tar -xof -
     cd petsc-3.11.0/
 
@@ -25,8 +25,9 @@ Debian container with configured and installed petsc.
                 --download-triangle --download-ctetgen --download-hdf5      \
                 --with-cc=gcc --with-fc=gfortran --with-cxx=c++             \
                 --with-cxx-dialect=C++11 --with-debugging=0                 \
-                COPTFLAGS=-O3 \
-                CXXOPTFLAGS=-O3 \
+                --prefix=/usr/local                                         \
+                COPTFLAGS=-O3                                               \
+                CXXOPTFLAGS=-O3                                             \
                 FOPTFLAGS=-O3
     make all test
     make install
