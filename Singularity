@@ -14,7 +14,7 @@ Debian container with configured and installed petsc.
     apt-get install git wget gcc g++ gfortran make         \
                     curl python pkg-config build-essential \
                     valgrind openssh-client openssh-server \
-                    libopenblas-dev libopenblas-base bison -y
+                    libopenblas-dev libopenblas-base bison flex -y
     wget http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-3.11.0.tar.gz
     gunzip -c petsc-3.11.0.tar.gz | tar -xof -
     cd petsc-3.11.0/
