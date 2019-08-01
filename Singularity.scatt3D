@@ -3,6 +3,6 @@ FROM: quay.io/fenicsproject/stable:2017.2.0
 
 %post
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6B05F25D762E3157
-    apt update
-    apt install gmsh python3-tk -y
+    apt update && apt upgrade
+    apt install gmsh python3-tk python3-numpy python3-scipy -y
     ldconfig
